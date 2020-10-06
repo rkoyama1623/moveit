@@ -1,7 +1,7 @@
-# moveit/moveit:noetic-ci
+# moveit/moveit:master-ci
 # Sets up a base image to use for running Continuous Integration on Travis
 
-FROM ros:noetic-ros-base
+FROM ros:melodic-ros-base
 MAINTAINER Dave Coleman dave@picknik.ai
 
 ENV TERM xterm
@@ -21,7 +21,7 @@ RUN \
         # Some basic requirements
         wget git sudo \
         # Preferred build tools
-        python3-catkin-tools python3-osrf-pycommon \
+        python-catkin-tools \
         clang clang-format-10 clang-tidy clang-tools \
         ccache && \
     #
