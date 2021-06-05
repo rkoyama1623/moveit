@@ -856,6 +856,8 @@ public:
     req.path_constraints = path_constraints;
     req.avoid_collisions = avoid_collisions;
     req.link_name = getEndEffectorLink();
+    req.max_velocity_scaling_factor = max_velocity_scaling_factor_;
+    req.max_acceleration_scaling_factor = max_acceleration_scaling_factor_;
 
     if (cartesian_path_service_.call(req, res))
     {

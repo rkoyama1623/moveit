@@ -158,7 +158,7 @@ bool MoveGroupCartesianPathService::computeService(moveit_msgs::GetCartesianPath
           // time trajectory
           // \todo optionally compute timing to move the eef with constant speed
           trajectory_processing::IterativeParabolicTimeParameterization time_param;
-          time_param.computeTimeStamps(rt, 1.0);
+          time_param.computeTimeStamps(rt, req.max_velocity_scaling_factor, req.max_acceleration_scaling_factor);
 
           rt.getRobotTrajectoryMsg(res.solution);
           ROS_INFO_NAMED(getName(), "Computed Cartesian path with %u points (followed %lf%% of requested trajectory)",
